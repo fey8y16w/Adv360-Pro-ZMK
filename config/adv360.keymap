@@ -93,7 +93,7 @@
         paste: paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&controlOnly V>;
+            bindings = <&controlOnly V &tog 0>;
             label = "PASTE";
         };
     };
