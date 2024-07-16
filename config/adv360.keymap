@@ -91,17 +91,9 @@
         };
 
         paste: paste {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings =
-                <&controlOnly V>,
-                <&macro_press>,
-                <&tog 0>,
-                <&macro_tap>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_release>,
-                <&to 0>;
-
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&controlOnly V &tog 0>;
             label = "PASTE";
         };
     };
