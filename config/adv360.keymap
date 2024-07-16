@@ -93,8 +93,22 @@
         paste: paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&controlOnly V &tog 0>;
+            bindings = <&controlOnly V &to 0>;
             label = "PASTE";
+        };
+
+        kp_press: kp_press {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&tog 0>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&tog 0>;
+
+            label = "KP_PRESS";
         };
     };
 
