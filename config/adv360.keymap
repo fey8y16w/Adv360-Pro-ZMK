@@ -156,8 +156,8 @@
         phn_Number: dummy_phnNumber {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp KP_NUMBER_0 &kp KP_NUMBER_4 &kp KP_NUMBER_3 &kp KP_NUMBER_0 &kp KP_NUMBER_0 &kp KP_NUMBER_0 &kp KP_NUMBER_0 &kp KP_NUMBER_0 &kp KP_NUMBER_0 &kp KP_NUMBER_0 &to 0>;
-            label = "DUMMY_PHNNUMBER";
+            bindings = <&none &kp N0 &kp N4 &kp N3 &kp N0 &kp N0 &kp N0 &kp N0 &kp N0 &kp N0 &kp N0 &to 0>;
+            label = "P_PHNNUMBER";
         };
     };
 
