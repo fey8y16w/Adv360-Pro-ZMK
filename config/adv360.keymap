@@ -163,7 +163,7 @@
         address_filler: address_filler {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp N1 &kp N1 &kp N1 &kp SPACE &kp R &kp O &kp B &kp E &kp R &kp T &kp S &kp O &kp N &kp SPACE &kp R &kp O &kp A &kp D &kp SPACE &kp B &kp A &kp S &kp S &kp H &kp I &kp L &kp L &to 0>;
+            bindings = <&none &kp N1 &kp N1 &kp N1 &kp SPACE &kp R &kp O &kp B &kp E &kp R &kp T &kp S &kp O &kp N &kp SPACE &kp R &kp O &kp A &kp D &kp SPACE &kp B &kp A &kp S &kp S &kp SPACE &kp H &kp I &kp L &kp L &to 0>;
             label = "ADDRESS_FILLER";
         };
     };
