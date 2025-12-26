@@ -166,6 +166,34 @@
             bindings = <&none &kp N1 &kp N1 &kp N1 &kp SPACE &kp R &kp O &kp B &kp E &kp R &kp T &kp S &kp O &kp N &kp SPACE &kp R &kp O &kp A &kp D &kp SPACE &kp B &kp A &kp S &kp S &kp SPACE &kp H &kp I &kp L &kp L &to 0>;
             label = "ADDRESS_FILLER";
         };
+
+        mac_copy: mac_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mac_key C &to 0>;
+            label = "MAC_COPY";
+        };
+
+        mac_key: mac_key {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_GUI>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LEFT_GUI>;
+
+            label = "MAC_KEY";
+        };
+
+        mac_paste: mac_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mac_key V &to 0>;
+            label = "MAC_PASTE";
+        };
     };
 
     keymap {
@@ -184,8 +212,8 @@
         layer_keypad {
             bindings = <
 &kp EQUAL    &kp N1       &kp N2    &kp N3    &kp N4     &kp N5  &trans                                                   &mo 3       &kp N6  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
-&kp TAB      &kp Q        &kp W     &kp E     &kp R      &kp T   &paste                                                   &control_x  &kp Y   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
-&kp ESC      &kp A        &kp S     &kp D     &kp F      &kp G   &email    &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &control_z  &kp H   &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
+&kp TAB      &kp Q        &kp W     &kp E     &kp R      &kp T   &paste                                                   &mac_copy   &kp Y   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
+&kp ESC      &kp A        &kp S     &kp D     &kp F      &kp G   &email    &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &mac_paste  &kp H   &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
 &kp LSHFT    &kp Z        &kp X     &kp C     &kp V      &kp B                        &kp HOME      &kp PG_UP                         &kp N   &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &kp RSHFT
 &email_test  &phn_Number  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0           &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 2
             >;
