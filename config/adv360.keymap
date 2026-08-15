@@ -219,7 +219,7 @@
         mac_browser_console: mac_browser_console {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&left_alt LEFT_COMMAND &kp J>;
+            bindings = <&kp LEFT_ALT &kp LEFT_COMMAND &kp J &to 0>;
             label = "MAC_BROWSER_CONSOLE";
         };
     };
